@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -48,7 +49,33 @@
                                     <constraint firstAttribute="trailing" secondItem="4Sz-fC-uZo" secondAttribute="trailing" id="goV-SH-Xql"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4h-C6-8eW">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2o5-ul-CWg" userLabel="First Interaction">
+                                <rect key="frame" x="24" y="224.00000000000003" width="366" height="309.66666666666674"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_football_boots" translatesAutoresizingMaskIntoConstraints="NO" id="Tnp-Rl-s7q">
+                                        <rect key="frame" x="119" y="8" width="128" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="128" id="2tk-dD-92t"/>
+                                            <constraint firstAttribute="width" secondItem="Tnp-Rl-s7q" secondAttribute="height" multiplier="1:1" id="YN5-Xv-VHT"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aproxime a chuteira para ouvir uma história" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bs-R2-NNk">
+                                        <rect key="frame" x="0.0" y="144" width="366" height="157.66666666666663"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Tnp-Rl-s7q" firstAttribute="top" secondItem="2o5-ul-CWg" secondAttribute="top" constant="8" id="MKK-WE-CMW"/>
+                                    <constraint firstItem="Tnp-Rl-s7q" firstAttribute="centerX" secondItem="2o5-ul-CWg" secondAttribute="centerX" id="c0m-HU-xrJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="8bs-R2-NNk" secondAttribute="bottom" constant="8" id="i2N-ba-n1c"/>
+                                    <constraint firstAttribute="trailing" secondItem="8bs-R2-NNk" secondAttribute="trailing" id="kpD-Ng-5qL"/>
+                                    <constraint firstItem="8bs-R2-NNk" firstAttribute="leading" secondItem="2o5-ul-CWg" secondAttribute="leading" id="qRN-jE-7Ik"/>
+                                    <constraint firstItem="8bs-R2-NNk" firstAttribute="top" secondItem="Tnp-Rl-s7q" secondAttribute="bottom" constant="8" id="vhu-YV-IhE"/>
+                                </constraints>
+                            </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4h-C6-8eW">
                                 <rect key="frame" x="339" y="665" width="60" height="60"/>
                                 <color key="backgroundColor" red="0.165141761302948" green="0.78278297185897827" blue="0.075803719460964203" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -65,16 +92,21 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="2o5-ul-CWg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="0bl-q3-r1d"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2o5-ul-CWg" secondAttribute="trailing" constant="24" id="EVN-QY-DeE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="n4h-C6-8eW" secondAttribute="bottom" constant="11" id="H9F-K4-jIo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uBp-0T-v4g" secondAttribute="bottom" id="IoT-1g-Axp"/>
                             <constraint firstItem="uBp-0T-v4g" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="JVf-Sn-4H6"/>
+                            <constraint firstItem="2o5-ul-CWg" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Y2Z-1I-wWM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="n4h-C6-8eW" secondAttribute="trailing" constant="15" id="ZL3-9p-hwE"/>
+                            <constraint firstItem="2o5-ul-CWg" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bNc-Re-Yma"/>
                             <constraint firstItem="uBp-0T-v4g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rs9-TZ-7BY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uBp-0T-v4g" secondAttribute="trailing" id="vBa-O8-nPc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="firstInteraction" destination="2o5-ul-CWg" id="Saz-cu-lhx"/>
                         <outlet property="output" destination="cD9-Ib-Sd3" id="Bkq-Bd-vRi"/>
                         <outlet property="record" destination="n4h-C6-8eW" id="oEN-Lw-QV6"/>
                         <outlet property="scrollView" destination="uBp-0T-v4g" id="ACv-Cz-Pyp"/>
@@ -86,6 +118,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_football_boots" width="128" height="128"/>
         <image name="ic_mic" width="48" height="48"/>
     </resources>
 </document>

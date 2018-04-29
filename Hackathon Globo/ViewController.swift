@@ -31,6 +31,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, CLLocationMa
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var record: UIButton!
     @IBOutlet weak var output: UILabel!
+    @IBOutlet weak var firstInteraction: UIView!
     
     // MARK: - Lifecycle events
     
@@ -168,7 +169,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, CLLocationMa
             let result = response.output.text
             self.recognizedText = ""
             for i in 0..<result.count {
-                print(result[i])
+                print("Watson Assistant: " + result[i])
                 self.recognizedText.append(result[i] + "\n")
             }
             DispatchQueue.main.async {
@@ -198,14 +199,16 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, CLLocationMa
                 print("Unknown")
             case .far:
                 print("Far away (more than 10 meters)")
+            case .immediate:
+                print("Beacon so close")
             case .near:
                 print("Nearby")
                 if (!self.runOnlyOnce) {
                     self.sendMessage(text: "")
                     self.runOnlyOnce = true
+                    self.firstInteraction.removeFromSuperview()
+                    self.record.isHidden = false
                 }
-            case .immediate:
-                print("Beacon so close")
             }
         }
     }
