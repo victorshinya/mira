@@ -25,6 +25,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, CLLocationMa
     private let speechSynthesizer = AVSpeechSynthesizer()
     private var locationManager: CLLocationManager!
     private var runOnlyOnce = false
+    private let audioSession = AVAudioSession.sharedInstance()
     
     // MARK: - IBOutlets
 
@@ -100,8 +101,6 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, CLLocationMa
             recognitionTask?.cancel()
             recognitionTask = nil
         }
-        
-        let audioSession = AVAudioSession.sharedInstance()
         do {
             try audioSession.setCategory(AVAudioSessionCategoryRecord)
             try audioSession.setActive(true, with: .notifyOthersOnDeactivation)
@@ -147,7 +146,6 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, CLLocationMa
     func stopRecognizing() {
         audioEngine.stop()
         recognitionRequest?.endAudio()
-        let audioSession = AVAudioSession.sharedInstance()
         try? audioSession.setCategory(AVAudioSessionCategorySoloAmbient)
         try? audioSession.setActive(false, with: .notifyOthersOnDeactivation)
         sendMessage(text: recognizedText)
@@ -201,6 +199,12 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, CLLocationMa
                 print("Far away (more than 10 meters)")
             case .immediate:
                 print("Beacon so close")
+                if (!self.runOnlyOnce) {
+                    self.sendMessage(text: "")
+                    self.runOnlyOnce = true
+                    self.firstInteraction.removeFromSuperview()
+                    self.record.isHidden = false
+                }
             case .near:
                 print("Nearby")
                 if (!self.runOnlyOnce) {
@@ -232,9 +236,22 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, CLLocationMa
     
     func speak(text: String) {
         self.output.text = text
-        let speechUtterance = AVSpeechUtterance(string: text)
+        let speechUtterance = AVSpeechUtterance(string: self.output.text!)
         speechUtterance.voice = AVSpeechSynthesisVoice(language: "pt-BR")
         speechSynthesizer.speak(speechUtterance)
+    }
+    
+    func extractURL(from text: String) -> String {
+        let types: NSTextCheckingResult.CheckingType = .link
+        let detector = try? NSDataDetector(types: types.rawValue)
+        guard let detect = detector else {
+            return ""
+        }
+        let matches = detect.matches(in: text, options: .reportCompletion, range: NSMakeRange(0, text.count))
+        for match in matches {
+            return match.url!.absoluteString
+        }
+        return ""
     }
     
     // MARK: - IBActions
@@ -250,4 +267,3 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, CLLocationMa
         }
     }
 }
-
