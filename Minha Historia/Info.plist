@@ -23,13 +23,13 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string></string>
+	<string>O app Minha História precisa saber onde você está para identificar os objetos próximos para que você possa interagir</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>O app Minha História precisa da sua localização durante o uso do app</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string></string>
+	<string>O app Minha História precisa usar o microfone para que você possa interagir com os objetos</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
-	<string></string>
+	<string>O app Minha História precisa usar para reconhecer a sua fala na hora de interagir com os objetos</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

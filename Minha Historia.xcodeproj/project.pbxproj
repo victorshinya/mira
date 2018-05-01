@@ -33,7 +33,7 @@
 
 /* Begin PBXFileReference section */
 		2212C3EC209561FC00F5BFA1 /* AssistantV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssistantV1.framework; path = Carthage/Build/iOS/AssistantV1.framework; sourceTree = "<group>"; };
-		22B1E4652094D3B500E8CE36 /* Hackathon Globo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hackathon Globo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22B1E4652094D3B500E8CE36 /* Minha Historia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Minha Historia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B1E4682094D3B500E8CE36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22B1E46A2094D3B500E8CE36 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		22B1E46D2094D3B500E8CE36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -69,7 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				2212C3EC209561FC00F5BFA1 /* AssistantV1.framework */,
-				22B1E4672094D3B500E8CE36 /* Hackathon Globo */,
+				22B1E4672094D3B500E8CE36 /* Minha Historia */,
 				22B1E4662094D3B500E8CE36 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,12 +77,12 @@
 		22B1E4662094D3B500E8CE36 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				22B1E4652094D3B500E8CE36 /* Hackathon Globo.app */,
+				22B1E4652094D3B500E8CE36 /* Minha Historia.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		22B1E4672094D3B500E8CE36 /* Hackathon Globo */ = {
+		22B1E4672094D3B500E8CE36 /* Minha Historia */ = {
 			isa = PBXGroup;
 			children = (
 				22B1E46A2094D3B500E8CE36 /* ViewController.swift */,
@@ -91,15 +91,15 @@
 				2254ABF52094E09E00DE917E /* Supporting Files */,
 				22B1E4742094D3B700E8CE36 /* Info.plist */,
 			);
-			path = "Hackathon Globo";
+			path = "Minha Historia";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		22B1E4642094D3B500E8CE36 /* Hackathon Globo */ = {
+		22B1E4642094D3B500E8CE36 /* Minha Historia */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 22B1E4772094D3B700E8CE36 /* Build configuration list for PBXNativeTarget "Hackathon Globo" */;
+			buildConfigurationList = 22B1E4772094D3B700E8CE36 /* Build configuration list for PBXNativeTarget "Minha Historia" */;
 			buildPhases = (
 				22B1E4612094D3B500E8CE36 /* Sources */,
 				22B1E4622094D3B500E8CE36 /* Frameworks */,
@@ -110,9 +110,9 @@
 			);
 			dependencies = (
 			);
-			name = "Hackathon Globo";
+			name = "Minha Historia";
 			productName = "Hackathon Globo";
-			productReference = 22B1E4652094D3B500E8CE36 /* Hackathon Globo.app */;
+			productReference = 22B1E4652094D3B500E8CE36 /* Minha Historia.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -130,7 +130,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 22B1E4602094D3B500E8CE36 /* Build configuration list for PBXProject "Hackathon Globo" */;
+			buildConfigurationList = 22B1E4602094D3B500E8CE36 /* Build configuration list for PBXProject "Minha Historia" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -143,7 +143,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				22B1E4642094D3B500E8CE36 /* Hackathon Globo */,
+				22B1E4642094D3B500E8CE36 /* Minha Historia */,
 			);
 		};
 /* End PBXProject section */
@@ -320,13 +320,13 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "Hackathon Globo/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Minha Historia/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.victorshinya.Hackathon-Globo";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.victorshinya.Minha-Historia";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -346,13 +346,13 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "Hackathon Globo/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Minha Historia/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.victorshinya.Hackathon-Globo";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.victorshinya.Minha-Historia";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -363,7 +363,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		22B1E4602094D3B500E8CE36 /* Build configuration list for PBXProject "Hackathon Globo" */ = {
+		22B1E4602094D3B500E8CE36 /* Build configuration list for PBXProject "Minha Historia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22B1E4752094D3B700E8CE36 /* Debug */,
@@ -372,7 +372,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		22B1E4772094D3B700E8CE36 /* Build configuration list for PBXNativeTarget "Hackathon Globo" */ = {
+		22B1E4772094D3B700E8CE36 /* Build configuration list for PBXNativeTarget "Minha Historia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22B1E4782094D3B700E8CE36 /* Debug */,

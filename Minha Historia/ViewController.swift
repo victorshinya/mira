@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Hackathon Globo
+//  Minha História
 //
 //  Created by Victor Shinya on 28/04/18.
 //  Copyright © 2018 Victor Shinya. All rights reserved.
