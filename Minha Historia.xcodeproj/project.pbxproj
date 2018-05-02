@@ -14,6 +14,7 @@
 		22B1E46E2094D3B500E8CE36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B1E46C2094D3B500E8CE36 /* Main.storyboard */; };
 		22B1E4702094D3B700E8CE36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22B1E46F2094D3B700E8CE36 /* Assets.xcassets */; };
 		22B1E4732094D3B700E8CE36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B1E4712094D3B700E8CE36 /* LaunchScreen.storyboard */; };
+		22D4AC67209966B600FEC1CE /* Mira.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D4AC66209966B600FEC1CE /* Mira.swift */; };
 		22EF59AF2094F8AB00BBBAC3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EF59AE2094F8AB00BBBAC3 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		22B1E46F2094D3B700E8CE36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22B1E4722094D3B700E8CE36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22B1E4742094D3B700E8CE36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22D4AC66209966B600FEC1CE /* Mira.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mira.swift; sourceTree = "<group>"; };
 		22EF59AE2094F8AB00BBBAC3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +89,7 @@
 			children = (
 				22B1E46A2094D3B500E8CE36 /* ViewController.swift */,
 				22EF59AE2094F8AB00BBBAC3 /* Constants.swift */,
+				22D4AC66209966B600FEC1CE /* Mira.swift */,
 				22B1E46C2094D3B500E8CE36 /* Main.storyboard */,
 				2254ABF52094E09E00DE917E /* Supporting Files */,
 				22B1E4742094D3B700E8CE36 /* Info.plist */,
@@ -168,6 +171,7 @@
 			files = (
 				22B1E46B2094D3B500E8CE36 /* ViewController.swift in Sources */,
 				22B1E4692094D3B500E8CE36 /* AppDelegate.swift in Sources */,
+				22D4AC67209966B600FEC1CE /* Mira.swift in Sources */,
 				22EF59AF2094F8AB00BBBAC3 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

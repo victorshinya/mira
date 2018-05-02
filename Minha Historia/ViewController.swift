@@ -8,20 +8,19 @@
 
 import UIKit
 import Speech
-import AssistantV1
 import CoreLocation
 
 class ViewController: UIViewController, SFSpeechRecognizerDelegate, CLLocationManagerDelegate {
     
     // MARK: - Global vars
     
+    private var mira = Mira()
+    private var message = ""
+    
     private let speechRecognizer = SFSpeechRecognizer.init(locale: Locale.init(identifier: "pt-BR"))
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
-    private var assistant: Assistant?
-    private var recognizedText = ""
-    private var context: Context?
     private let speechSynthesizer = AVSpeechSynthesizer()
     private var locationManager: CLLocationManager!
     private var runOnlyOnce = false
@@ -38,9 +37,11 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, CLLocationMa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // TODO: Remove after tests
+        firstInteraction.removeFromSuperview()
+        self.record.isHidden = false
         setUpUI()
         setDelegates()
-        setUpAssistant()
         setUpLocationManager()
     }
     
@@ -118,7 +119,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, CLLocationMa
             if result != nil, let text = result?.bestTranscription.formattedString, let final = result?.isFinal {
                 print("Recognized audio: " + text)
                 isFinal = final
-                self.recognizedText = text
+                self.message = text
             }
             if error != nil || isFinal {
                 self.audioEngine.stop()
@@ -148,32 +149,11 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, CLLocationMa
         recognitionRequest?.endAudio()
         try? audioSession.setCategory(AVAudioSessionCategorySoloAmbient)
         try? audioSession.setActive(false, with: .notifyOthersOnDeactivation)
-        sendMessage(text: recognizedText)
-    }
-    
-    func setUpAssistant() {
-        assistant = Assistant(username: Constants.username, password: Constants.password, version: Constants.version)
-    }
-    
-    func sendMessage(text: String) {
-        var request = MessageRequest()
-        let input = InputData(text: recognizedText)
-        request.input = input
-        request.context = context
-        assistant?.message(workspaceID: Constants.workspace, request: request, nodesVisitedDetails: false, failure: { error in
-            print("Error: " + error.localizedDescription)
-        }, success: { response in
-            self.context = response.context
-            let result = response.output.text
-            self.recognizedText = ""
-            for i in 0..<result.count {
-                print("Watson Assistant: " + result[i])
-                self.recognizedText.append(result[i] + "\n")
-            }
+        mira.ask(question: message) { response in
             DispatchQueue.main.async {
-                self.speak(text: self.recognizedText)
+                self.output.text = response
             }
-        })
+        }
     }
     
     func setUpLocationManager() {
@@ -199,16 +179,14 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, CLLocationMa
                 print("Far away (more than 10 meters)")
             case .immediate:
                 print("Beacon so close")
-                if (!self.runOnlyOnce) {
-                    self.sendMessage(text: "")
-                    self.runOnlyOnce = true
-                    self.firstInteraction.removeFromSuperview()
-                    self.record.isHidden = false
-                }
             case .near:
                 print("Nearby")
                 if (!self.runOnlyOnce) {
-                    self.sendMessage(text: "")
+                    self.mira.ask(question: "") { response in
+                        DispatchQueue.main.async {
+                            self.output.text = response
+                        }
+                    }
                     self.runOnlyOnce = true
                     self.firstInteraction.removeFromSuperview()
                     self.record.isHidden = false
@@ -254,7 +232,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, CLLocationMa
         return ""
     }
     
-    // MARK: - IBActions
+    // MARK: - IBAction
 
     @IBAction func recordTapped(_ sender: UIButton) {
         if audioEngine.isRunning {
