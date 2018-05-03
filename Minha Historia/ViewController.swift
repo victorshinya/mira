@@ -27,7 +27,16 @@ class ViewController: UIViewController, SpeechRecognitionDelegate, BeaconFinderD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpUI()
+        // Set Up User Interface
+        record.layer.cornerRadius = record.layer.frame.size.height / 2
+        record.clipsToBounds = true
+        // Request User Authorization
+        mira.isBeaconFinderAuthorized(with: self)
+        mira.isAuthorized(completion: { authorized in
+            DispatchQueue.main.async {
+                self.record.isEnabled = authorized
+            }
+        })
     }
     
     // MARK: - SpeechRecognitionDelegate
@@ -48,18 +57,7 @@ class ViewController: UIViewController, SpeechRecognitionDelegate, BeaconFinderD
         record.isHidden = false
     }
     
-    // MARK: - Custom methods
-    
-    func setUpUI() {
-        record.layer.cornerRadius = record.layer.frame.size.height / 2
-        record.clipsToBounds = true
-        mira.isBeaconFinderAuthorized(with: self)
-        mira.isAuthorized(completion: { authorized in
-            DispatchQueue.main.async {
-                self.record.isEnabled = authorized
-            }
-        })
-    }
+    // MARK: - Other functions
     
     func speak(text: String) {
         self.output.text = text

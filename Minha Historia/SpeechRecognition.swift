@@ -101,7 +101,7 @@ class SpeechRecognition: NSObject, SFSpeechRecognizerDelegate {
         } catch {
             print("[Speech Recognition] Error: While configuring Audio Session to stop recognizing speech")
         }
-        return recognized!
+        return recognized ?? ""
     }
     
     func isRecognizing() -> Bool {
