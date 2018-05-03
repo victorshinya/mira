@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2212C3ED209561FC00F5BFA1 /* AssistantV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2212C3EC209561FC00F5BFA1 /* AssistantV1.framework */; };
 		2212C3EE209561FD00F5BFA1 /* AssistantV1.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2212C3EC209561FC00F5BFA1 /* AssistantV1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		227ADB0A2099F4D70006AE80 /* SpeechRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227ADB092099F4D70006AE80 /* SpeechRecognition.swift */; };
+		227ADB0E209A2B7E0006AE80 /* VoiceSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227ADB0D209A2B7E0006AE80 /* VoiceSynthesizer.swift */; };
+		227ADB10209A2D210006AE80 /* BeaconFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227ADB0F209A2D210006AE80 /* BeaconFinder.swift */; };
 		22B1E4692094D3B500E8CE36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B1E4682094D3B500E8CE36 /* AppDelegate.swift */; };
 		22B1E46B2094D3B500E8CE36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B1E46A2094D3B500E8CE36 /* ViewController.swift */; };
 		22B1E46E2094D3B500E8CE36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B1E46C2094D3B500E8CE36 /* Main.storyboard */; };
@@ -34,6 +37,9 @@
 
 /* Begin PBXFileReference section */
 		2212C3EC209561FC00F5BFA1 /* AssistantV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssistantV1.framework; path = Carthage/Build/iOS/AssistantV1.framework; sourceTree = "<group>"; };
+		227ADB092099F4D70006AE80 /* SpeechRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognition.swift; sourceTree = "<group>"; };
+		227ADB0D209A2B7E0006AE80 /* VoiceSynthesizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSynthesizer.swift; sourceTree = "<group>"; };
+		227ADB0F209A2D210006AE80 /* BeaconFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconFinder.swift; sourceTree = "<group>"; };
 		22B1E4652094D3B500E8CE36 /* Minha Historia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Minha Historia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B1E4682094D3B500E8CE36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22B1E46A2094D3B500E8CE36 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,8 +94,11 @@
 			isa = PBXGroup;
 			children = (
 				22B1E46A2094D3B500E8CE36 /* ViewController.swift */,
-				22EF59AE2094F8AB00BBBAC3 /* Constants.swift */,
 				22D4AC66209966B600FEC1CE /* Mira.swift */,
+				227ADB092099F4D70006AE80 /* SpeechRecognition.swift */,
+				227ADB0D209A2B7E0006AE80 /* VoiceSynthesizer.swift */,
+				227ADB0F209A2D210006AE80 /* BeaconFinder.swift */,
+				22EF59AE2094F8AB00BBBAC3 /* Constants.swift */,
 				22B1E46C2094D3B500E8CE36 /* Main.storyboard */,
 				2254ABF52094E09E00DE917E /* Supporting Files */,
 				22B1E4742094D3B700E8CE36 /* Info.plist */,
@@ -172,7 +181,10 @@
 				22B1E46B2094D3B500E8CE36 /* ViewController.swift in Sources */,
 				22B1E4692094D3B500E8CE36 /* AppDelegate.swift in Sources */,
 				22D4AC67209966B600FEC1CE /* Mira.swift in Sources */,
+				227ADB0A2099F4D70006AE80 /* SpeechRecognition.swift in Sources */,
+				227ADB10209A2D210006AE80 /* BeaconFinder.swift in Sources */,
 				22EF59AF2094F8AB00BBBAC3 /* Constants.swift in Sources */,
+				227ADB0E209A2B7E0006AE80 /* VoiceSynthesizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

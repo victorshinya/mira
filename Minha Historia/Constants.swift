@@ -19,4 +19,6 @@ struct Constants {
     static let workspace = ""
     // Beacon UUID for iBeacon
     static let uuid = ""
+    // Voice Synthesizer
+    static let language = "pt-BR"
 }
